@@ -1,0 +1,52 @@
+$font-primary: "Lexend", sans-serif;
+
+$color-white: #ffffff;
+$color-grey-1: #e0e3eb;
+$color-grey-2: #888b97;
+$color-grey-3: #626687;
+
+$color-primary: #10b981;
+$color-primary-light: #d1fae5;
+$color-primary-dark: #0b9567;
+
+$color-secondary: #f59e0b;
+$color-black: #1b1c57;
+
+$color-danger: #ee4444;
+$color-danger-light: #fee2e2;
+$color-info: rgb(29, 78, 216);
+$color-info-light: #dbeafe;
+
+$color-shape-blue: #82ffd2;
+$color-shape-green: #82f7ff;
+
+$color-logo-green: #4ce4c9;
+
+$color-sky-blue: rgb(127, 193, 224, 0.6);
+$color-accent-green: #0cb981;
+$color-popular-red: #fde2e1;
+$color-active-filter: #c7fce3;
+$color-active-filter-hover: #d4ffeb;
+$color-consent-hover: #ebf9f3;
+$color-play-bg: #2f2f2f71;
+
+$horizontal-padding: 9vw;
+$header-top-height: 14rem;
+$header-height: 72rem;
+
+$background-shape-height: 43.8rem;
+$background-shape-width: 49.4rem;
+
+$nav-bar-button-width-big: 11.2rem;
+
+$zindex: (
+  modal: 9000,
+  overlay: 8000,
+  dropdown: 7000,
+  header: 6000,
+  footer: 5000,
+  before-bg: -2,
+  after-bg: -1,
+  tag-top: 1,
+  input-top: 2,
+);

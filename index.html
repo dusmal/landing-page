@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="scss/main.scss" />
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+    <title>Hounter</title>
+    <script type="module" src="js/main.js" defer></script>
+  </head>
+
+  <body class="container">
+    <header class="header">
+      <div class="header__top">
+        <div class="header__logo">
+          <div class="header__logo-shape"></div>
+          <a href="/" class="header__logo-link">
+            <h2 class="header__logo-text">Hounter</h2>
+          </a>
+        </div>
+        <nav class="header__navbar" aria-label="Main navigation">
+          <ul class="header__navbar-list">
+            <li class="header__navbar-list-item">
+              <button class="button button--menu-white">
+                <span>About us</span>
+              </button>
+            </li>
+            <li class="header__navbar-list-item">
+              <button class="button button--menu-white">
+                <span>Article</span>
+              </button>
+            </li>
+            <li id="property-button" class="header__navbar-list-item">
+              <button class="button button--menu-white" id="dropdown-btn">
+                <span class="button--text"
+                  >Property
+                  <svg id="dropdown__icon-down" class="dropdown__icon">
+                    <use href="/img/svgs/icons.svg#svg-icon-down"></use>
+                  </svg>
+                  <svg id="dropdown__icon-up" class="dropdown__icon inactive">
+                    <use href="/img/svgs/icons.svg#svg-icon-up"></use>
+                  </svg>
+                </span>
+              </button>
+              <ul class="dropdown__menu dropdown__menu--property inactive">
+                <li class="dropdown__item">
+                  <a
+                    href="#featured-house"
+                    class="dropdown__link"
+                    data-property-type="house"
+                    >House</a
+                  >
+                </li>
+                <li class="dropdown__item">
+                  <a
+                    href="#featured-house"
+                    class="dropdown__link"
+                    data-property-type="villa"
+                    >Villa</a
+                  >
+                </li>
+                <li class="dropdown__item">
+                  <a
+                    href="#featured-house"
+                    class="dropdown__link"
+                    data-property-type="apartment"
+                    >Apartment</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="header__navbar-list-item">
+              <button class="button button--menu-white">
+                <span>Sign up</span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <section id="header-hero" class="header__hero">
+        <div class="header__hero-left">
+          <div class="header__hero--left-wrapper">
+            <h1 class="header__hero--main-heading">
+              Find The Place To Live
+              <span class="accent-color">Your Dreams</span> Easily Here
+            </h1>
+            <h3 class="header__hero--main-paragraph">
+              Everything you need about finding your place to live will be here,
+              where it will be easier for you
+            </h3>
+          </div>
+          <form class="header__hero__search-bar">
+            <svg class="header__hero__search-bar__pin-icon pin-icon">
+              <use href="/img/svgs/icons.svg#svg-pin"></use>
+            </svg>
+            <input
+              id="search"
+              type="text"
+              placeholder="Search for the location you want!"
+            />
+            <button
+              class="button button--search button--primary-green"
+              type="button"
+            >
+              Search
+            </button>
+          </form>
+          <div class="header__partnership">
+            <h3>Our Partnership</h3>
+            <div class="header__partnership-logos">
+              <picture>
+                <source
+                  srcset="./img/logos/traveloka_logo.webp"
+                  type="image/webp"
+                />
+                <img
+                  loading="lazy"
+                  src="./img/logos/traveloka_logo.png"
+                  alt="traveloka"
+                />
+              </picture>
+              <picture>
+                <source
+                  srcset="./img/logos/tiket_logo.webp"
+                  type="image/webp"
+                />
+                <img
+                  loading="lazy"
+                  src="./img/logos/tiket_logo.png"
+                  alt="ticketcom"
+                />
+              </picture>
+              <picture>
+                <source
+                  srcset="./img/logos/airbnb_logo.webp"
+                  type="image/webp"
+                />
+                <img
+                  loading="lazy"
+                  src="./img/logos/airbnb_logo.png"
+                  alt="airbnb"
+                />
+              </picture>
+              <picture>
+                <source
+                  srcset="./img/logos/tripadvisor_logo.webp"
+                  type="image/webp"
+                />
+                <img
+                  loading="lazy"
+                  src="./img/logos/tripadvisor_logo.png"
+                  alt="tripadvisor"
+                />
+              </picture>
+            </div>
+          </div>
+        </div>
+        <div class="header__hero-right">
+          <div class="header__hero-info">
+            <div class="info-card">
+              <div class="info-card__images">
+                <picture>
+                  <source
+                    srcset="/img/avatars/person1-group.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    loading="lazy"
+                    src="/img/avatars/person1-group.jpeg"
+                    alt=""
+                  />
+                </picture>
+                <picture>
+                  <source
+                    srcset="/img/avatars/person2-group.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    loading="lazy"
+                    src="/img/avatars/person2-group.jpeg"
+                    alt=""
+                  />
+                </picture>
+                <picture>
+                  <source
+                    srcset="/img/avatars/person3-group.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    loading="lazy"
+                    src="/img/avatars/person3-group.jpeg"
+                    alt=""
+                  />
+                </picture>
+              </div>
+              <div class="info-card__text">
+                <p>1k+ People</p>
+                <p>Successfully Getting Home</p>
+              </div>
+            </div>
+            <div class="info-card">
+              <picture>
+                <source
+                  srcset="/img/avatars/house-card.webp"
+                  type="image/webp"
+                />
+                <img loading="lazy" src="/img/avatars/house-card.png" alt="" />
+              </picture>
+              <div class="info-card__text">
+                <p>56 Houses Available</p>
+                <p>Sold Monthly</p>
+              </div>
+            </div>
+            <div class="info-card">
+              <picture>
+                <source
+                  srcset="/img/avatars/person-card.webp"
+                  type="image/webp"
+                />
+                <img loading="lazy" src="/img/avatars/person-card.png" alt="" />
+              </picture>
+              <div class="info-card__text">
+                <p>4k+</p>
+                <p>People Looking for New Homes</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <main>
+      <div class="background-wrapper">
+        <section id="featured-house" class="featured-house">
+          <span class="sr-only">Our recommendation featured house</span>
+          <header class="featured-header">
+            <p class="featured-header__tag decorative-tag" aria-hidden="true">
+              Our recommendation
+            </p>
+            <div class="featured-header__content">
+              <h2
+                class="featured-header__title section-title"
+                aria-hidden="true"
+              >
+                Featured House
+              </h2>
+              <div
+                role="group"
+                class="featured-header__property-filter"
+                aria-label="Property types"
+              >
+                <button
+                  id="house-filter-btn"
+                  class="button button--white-green-border"
+                  data-property-type="house"
+                >
+                  <svg class="featured-house__property-icon">
+                    <use href="/img/svgs/icons.svg#svg-icon-house"></use>
+                  </svg>
+                  House
+                </button>
+                <button
+                  id="villa-filter-btn"
+                  class="button button--white-green-border"
+                  data-property-type="villa"
+                >
+                  <svg class="featured-house__property-icon">
+                    <use href="/img/svgs/icons.svg#svg-icon-villa"></use>
+                  </svg>
+                  Villa
+                </button>
+                <button
+                  id="apartment-filter-btn"
+                  class="button button--white-green-border"
+                  data-property-type="apartment"
+                >
+                  <svg class="featured-house__property-icon">
+                    <use href="/img/svgs/icons.svg#svg-icon-apartment"></use>
+                  </svg>
+                  Apartment
+                </button>
+              </div>
+              <div
+                role="group"
+                class="featured-header__slider-nav"
+                aria-label="Featured properties slider"
+              >
+                <button
+                  id="prev-btn"
+                  class="round-button round-button--left scroll-button"
+                  aria-label="Previous featured house"
+                  disabled
+                >
+                  <svg class="featured-house__left-icon">
+                    <use href="/img/svgs/icons.svg#svg-icon-left"></use>
+                  </svg>
+                </button>
+                <button
+                  id="next-btn"
+                  class="round-button round-button--right scroll-button"
+                  aria-label="Next featured house"
+                  disabled
+                >
+                  <svg class="featured-house__right-icon">
+                    <use href="/img/svgs/icons.svg#svg-icon-right"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </header>
+          <ul class="featured-house__list">
+            <li data-property-type="house" class="featured-house__item">
+              <article class="featured-house__item-content">
+                <div class="featured-house__item-image">
+                  <picture>
+                    <source
+                      srcset="/img/properties/roselands.webp"
+                      type="image/webp"
+                    />
+                    <img
+                      loading="lazy"
+                      src="/img/properties/roselands.jpeg"
+                      alt="Roselands House"
+                    />
+                  </picture>
+                  <span class="featured-house__item-status tag-popular"
+                    >Popular</span
+                  >
+                </div>
+                <div class="featured-house__item-details">
+                  <h3 class="featured-house__item-name">Roselands House</h3>
+                  <p class="featured-house__item-price">$ 35,000,000</p>
+                </div>
+                <div class="featured-house__item-agent">
+                  <picture>
+                    <source
+                      srcset="/img/avatars/diane.webp"
+                      type="image/webp"
+                    />
+                    <img
+                      loading="lazy"
+                      src="/img/avatars/diane.jpeg"
+                      alt="Property agent Dianne Russell"
+                      class="featured-house__item-agent-image"
+                    />
+                  </picture>
+                  <div class="featured-house__item-agent-info">
+                    <p>Dianne Russell</p>
+                    <p>Manchester, Kentucky</p>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li
+              data-property-type="villa"
+              class="featured-house__item featured-house__item--new"
+            >
+              <article class="featured-house__item-content">
+                <div class="featured-house__item-image">
+                  <picture>
+                    <source
+                      srcset="/img/properties/woodsland.webp"
+                      type="image/webp"
+                    />
+                    <img
+                      loading="lazy"
+                      src="/img/properties/woodsland.jpeg"
+                      alt="Woodlanside House"
+                    />
+                  </picture>
+                  <span class="featured-house__item-status tag-new"
+                    >New house</span
+                  >
+                </div>
+                <div class="featured-house__item-details">
+                  <h3 class="featured-house__item-name">Woodlanside</h3>
+                  <p class="featured-house__item-price">$ 20,000,000</p>
+                </div>
+                <div class="featured-house__item-agent">
+                  <picture>
+                    <source
+                      srcset="/img/avatars/robert.webp"
+                      type="image/webp"
+                    />
+                    <img
+                      loading="lazy"
+                      src="/img/avatars/robert.jpeg"
+                      alt="Property agent Robert Fox"
+                      class="featured-house__item-agent-image"
+                    />
+                  </picture>
+                  <div class="featured-house__item-agent-info">
+                    <p>Robert Fox</p>
+                    <p>Dr. San Jose, South Dakota</p>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li
+              data-property-type="apartment"
+              class="featured-house__item featured-house__item--new"
+            >
+              <article class="featured-house__item-content">
+                <div class="featured-house__item-image">
+                  <picture>
+                    <source
+                      srcset="/img/properties/oldlighthouse.webp"
+                      type="image/webp"
+                    />
+                    <img
+                      loading="lazy"
+                      src="/img/properties/oldlighthouse.jpeg"
+                      alt="The Old Lighthouse House"
+                    />
+                  </picture>
+                  <span class="featured-house__item-status tag-best-deal"
+                    >Best deals</span
+                  >
+                </div>
+                <div class="featured-house__item-details">
+                  <h3 class="featured-house__item-name">The Old Lighthouse</h3>
+                  <p class="featured-house__item-price">$ 44.000.000</p>
+                </div>
+                <div class="featured-house__item-agent">
+                  <picture>
+                    <source
+                      srcset="/img/avatars/roland.webp"
+                      type="image/webp"
+                    />
+                    <img
+                      loading="lazy"
+                      src="/img/avatars/roland.jpeg"
+                      alt="Property agent Ronald Richards"
+                      class="featured-house__item-agent-image"
+                    />
+                  </picture>
+                  <div class="featured-house__item-agent-info">
+                    <p>Ronald Richards</p>
+                    <p>Santa Ana, Illinois</p>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li
+              data-property-type="villa"
+              class="featured-house__item featured-house__item--new"
+            >
+              <article class="featured-house__item-content">
+                <div class="featured-house__item-image">
+                  <picture>
+                    <source
+                      srcset="/img/properties/griddynamics_villa.webp"
+                      type="image/webp"
+                    />
+                    <img
+                      loading="lazy"
+                      src="/img/properties/griddynamics_villa.jpg"
+                      alt="Grid dynamics Krakow"
+                    />
+                  </picture>
+                  <span class="featured-house__item-status tag-popular"
+                    >Popular</span
+                  >
+                </div>
+                <div class="featured-house__item-details">
+                  <h3 class="featured-house__item-name">
+                    The Grid Dynamics Villa
+                  </h3>
+                  <p class="featured-house__item-price">$ 999.999.999</p>
+                </div>
+                <div class="featured-house__item-agent">
+                  <picture>
+                    <source
+                      srcset="/img/avatars/person-card.webp"
+                      type="image/webp"
+                    />
+                    <img
+                      loading="lazy"
+                      src="/img/avatars/person-card.jpeg"
+                      alt="Property agent Malgorzata Duszynska"
+                      class="featured-house__item-agent-image"
+                    />
+                  </picture>
+                  <div class="featured-house__item-agent-info">
+                    <p>Malgorzata Duszynska</p>
+                    <p>Krakow, Poland</p>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li
+              data-property-type="house"
+              class="featured-house__item featured-house__item--new"
+            >
+              <article class="featured-house__item-content">
+                <div class="featured-house__item-image">
+                  <picture>
+                    <source
+                      srcset="/img/avatars/house-card.webp"
+                      type="image/webp"
+                    />
+                    <img
+                      loading="lazy"
+                      src="/img/avatars/house-card.png"
+                      alt="Cosmo's House"
+                    />
+                  </picture>
+                  <span class="featured-house__item-status tag-popular"
+                    >Popular</span
+                  >
+                </div>
+                <div class="featured-house__item-details">
+                  <h3 class="featured-house__item-name">Cosmo's House</h3>
+                  <p class="featured-house__item-price">$ 22.000.000</p>
+                </div>
+                <div class="featured-house__item-agent">
+                  <picture>
+                    <source
+                      srcset="/img/avatars/person-card.webp"
+                      type="image/webp"
+                    />
+                    <img
+                      loading="lazy"
+                      src="/img/avatars/person1-group.jpeg"
+                      alt="Property agent Jenny Wilson"
+                      class="featured-house__item-agent-image"
+                    />
+                  </picture>
+                  <div class="featured-house__item-agent-info">
+                    <p>Jenny Wilson</p>
+                    <p>Preston Rd. Inglewood, Maine 98380</p>
+                  </div>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </section>
+        <section class="house-tour">
+          <article class="house-tour__info">
+            <span class="house-tour__tag decorative-tag" aria-hidden="true"
+              >Ready to sell</span
+            >
+            <div class="house-tour__intro">
+              <h2 class="house-tour__title section-title">
+                Let's Tour And See Our House
+              </h2>
+              <p class="house-tour__subtitle">
+                Houses recommended by our partners that have been curated to
+                become the home of your dreams!
+              </p>
+            </div>
+            <h3 class="house-details__title">House Details</h3>
+            <ul class="house-details">
+              <li class="house-details__item">
+                <span class="house-details__text">4 bedrooms</span>
+              </li>
+              <li class="house-details__item">
+                <span class="house-details__text">2 bathrooms</span>
+              </li>
+              <li class="house-details__item">
+                <span class="house-details__text">1 carport</span>
+              </li>
+              <li class="house-details__item">
+                <span class="house-details__text">2 floors</span>
+              </li>
+            </ul>
+
+            <div class="agent">
+              <div class="agent__wrapper">
+                <picture>
+                  <source srcset="/img/avatars/diane.webp" type="image/webp" />
+                  <img
+                    loading="lazy"
+                    src="/img/avatars/diane.jpeg"
+                    alt="Property agent Dianne Russell"
+                    class="featured-house__item-agent-image"
+                  />
+                </picture>
+                <div class="agent__info">
+                  <p class="agent__info__name">Diane Russell</p>
+                  <p class="agent__info__location">Manchester, Kentucky</p>
+                </div>
+              </div>
+              <button
+                class="button--primary-green button--contact"
+                type="button"
+              >
+                Contact Now
+              </button>
+            </div>
+          </article>
+
+          <section
+            class="house-tour__media"
+            aria-label="House tour media gallery"
+          >
+            <div class="media-gallery">
+              <div class="video-container">
+                <video
+                  loop
+                  class="media-gallery__video"
+                  aria-label="Presentation of feaured house"
+                >
+                  <source src="/img/vid/house-vid.mp4" type="video/mp4" />
+                </video>
+                <button class="button--play" aria-label="Play video">
+                  <svg
+                    width="15"
+                    height="22"
+                    viewBox="0 0 15 22"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M15 11.5L0.5 0.5H0V21.5L15 11.5Z" fill="white" />
+                  </svg>
+                </button>
+                <button class="button--pause sr-only" aria-label="Pause video">
+                  <svg
+                    width="15"
+                    height="22"
+                    viewBox="0 0 15 22"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2 21.5h3V0.5H2v21zm8-21v21h3V0.5h-3z"
+                      fill="white"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div class="media-gallery__thumbs">
+                <picture>
+                  <source
+                    srcset="img/properties/featured-house-armchair.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    class="media-gallery__thumb thumb--active thumb-left"
+                    src="img/properties/featured-house-armchair.jpeg"
+                    alt="House exterior view"
+                    loading="lazy"
+                  />
+                </picture>
+                <picture>
+                  <source
+                    srcset="house-2.webp"
+                    type="img/properties/featured-house-couch."
+                  />
+                  <img
+                    class="media-gallery__thumb thumb-center"
+                    src="img/properties/featured-house-couch.jpeg"
+                    alt="House interior living room"
+                    loading="lazy"
+                  />
+                </picture>
+                <picture>
+                  <source
+                    srcset="img/properties/featured-house-counter.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    class="media-gallery__thumb thumb-right"
+                    src="img/properties/featured-house-counter.jpeg"
+                    alt="House backyard view"
+                    loading="lazy"
+                  />
+                </picture>
+              </div>
+            </div>
+          </section>
+        </section>
+      </div>
+      <section id="subscribe" class="subscribe">
+        <div class="subscribe__wrapper">
+          <div class="decorative-img"></div>
+          <div class="decorative-img"></div>
+          <div class="decorative-img"></div>
+          <div class="decorative-img"></div>
+          <div class="decorative-img"></div>
+          <div class="decorative-img"></div>
+          <div class="decorative-img"></div>
+          <div class="decorative-img"></div>
+          <h2 class="subscribe__title">
+            <span class="subscribe__animate-text">Subscribe</span> For More Info
+            and Updates from Hounter
+          </h2>
+          <form class="subscribe__form">
+            <div class="subscribe__form-container">
+              <label class="sr-only" for="email">Email address</label>
+              <svg class="mail-icon">
+                <use
+                  href="/img/svgs/icons.svg#svg-mail"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                ></use>
+              </svg>
+              <input
+                type="email"
+                id="email"
+                class="subscribe__form__input"
+                placeholder="Your email here"
+                required
+                aria-required="true"
+                aria-invalid="false"
+                aria-describedby="emailError"
+              />
+              <div class="border"></div>
+              <button
+                type="submit"
+                class="button button--subscribe button--primary-green"
+              >
+                Subscribe Now
+              </button>
+            </div>
+            <div
+              id="emailError"
+              class="form__error-message"
+              aria-live="assertive"
+            ></div>
+          </form>
+        </div>
+      </section>
+      <section class="form">
+        <section class="form__info">
+          <h2 class="form__title">Would you like to Join?</h2>
+          <article class="form__benefits">
+            <ul class="form__benefits-list">
+              <li class="form__benefit">
+                Quickly get three quotes from these local that people love in
+                online reviews.
+              </li>
+              <li class="form__benefit">
+                Pick the whose estimate suits you best.
+              </li>
+              <li class="form__benefit">
+                We then make sure the work is done to your complete
+                satisfaction.
+              </li>
+            </ul>
+            <picture>
+              <source srcset="/img/avatars/create.webp" type="image/webp" />
+              <img
+                loading="lazy"
+                src="/img/avatars/create.png"
+                alt="Property agent Jenny Wilson"
+                class="featured-house__item-agent-image"
+              />
+            </picture>
+          </article>
+        </section>
+        <section class="form__form-section">
+          <form class="form__form">
+            <section class="form__form-fields">
+              <div class="form__form-group">
+                <label class="form__label" for="firstName">Name</label>
+                <input
+                  class="form__input"
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+
+              <div class="form__form-group">
+                <label class="form__label" for="lastName">Surname</label>
+                <input
+                  class="form__input"
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  placeholder="Your surname"
+                  required
+                />
+              </div>
+              <div class="form__form-group">
+                <label class="form__label" for="education-select"
+                  >Education</label
+                >
+                <button
+                  type="button"
+                  class="form__select"
+                  role="combobox"
+                  id="education-select"
+                  value="Select one"
+                  aria-controls="education-listbox"
+                  aria-haspopup="listbox"
+                  tabindex="0"
+                  aria-expanded="false"
+                  name="education"
+                >
+                  Select one
+                </button>
+                <ul
+                  role="listbox"
+                  id="education-listbox"
+                  class="form__select-options"
+                >
+                  <li role="option" data-value="high_school">High School</li>
+                  <li role="option" data-value="bachelors">
+                    Bachelor's Degree
+                  </li>
+                  <li role="option" data-value="masters">Master's Degree</li>
+                  <li role="option" data-value="phd">Ph.D.</li>
+                  <li role="option" data-value="other">Other</li>
+                </ul>
+              </div>
+              <div class="form__form-group form__message">
+                <label class="form__label" for="message">Message</label>
+                <textarea
+                  class="form__textarea"
+                  id="message"
+                  name="message"
+                  rows="4"
+                  maxlength="500"
+                  placeholder="Message"
+                  required
+                ></textarea>
+                <span class="form__message__char-limit" id="char-limit"
+                  >0/500</span
+                >
+              </div>
+            </section>
+
+            <section class="form__form-consent">
+              <div class="form__form-group">
+                <div class="form__checkbox-wrapper">
+                  <input
+                    class="form__checkbox sr-only"
+                    type="checkbox"
+                    id="consent"
+                    name="consent"
+                    required
+                  />
+                  <label class="form__checkbox-label" for="consent">
+                    I give consent to the processing of my personal data given
+                    in the contact form above under the terms and conditions of
+                    Grid Dynamics Privacy Policy.
+                  </label>
+                </div>
+              </div>
+              <button
+                class="form__submit button button--primary-green"
+                type="submit"
+              >
+                Submit
+              </button>
+            </section>
+          </form>
+        </section>
+      </section>
+    </main>
+    <footer id="footer" class="footer">
+      <section class="footer__brand">
+        <div class="footer__info">
+          <div class="footer__info-logo">
+            <div class="logo-shape"></div>
+            <span class="logo-text">Hounter</span>
+          </div>
+          <p class="footer__info-description">
+            We provide information about properties such as houses, villas and
+            apartments to help people find their dream home
+          </p>
+        </div>
+        <ul class="footer__social" aria-label="Social media links">
+          <li class="footer__social-item">
+            <a href="#" class="footer__social-link" aria-label="Facebook">
+              <svg id="fb-icon" class="social-icon" aria-hidden="true">
+                <use href="/img/svgs/icons.svg#svg-fb"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="footer__social-item">
+            <a href="#" class="footer__social-link" aria-label="Twitter">
+              <svg id="twitter-icon" class="social-icon" aria-hidden="true">
+                <use href="/img/svgs/icons.svg#svg-twitter"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="footer__social-item">
+            <a href="#" class="footer__social-link" aria-label="Pinterest">
+              <svg id="pintrest-icon" class="social-icon" aria-hidden="true">
+                <use href="/img/svgs/icons.svg#svg-pintrest"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="footer__columns">
+        <div class="footer__column">
+          <h2 class="footer__title">Property</h2>
+          <ul class="footer__list">
+            <li class="footer__list__item">
+              <a
+                href="#featured-house"
+                class="footer__link"
+                data-property-type="house"
+                >House</a
+              >
+            </li>
+            <li class="footer__list__item">
+              <a
+                href="#featured-house"
+                class="footer__link"
+                data-property-type="apartment"
+                >Apartment</a
+              >
+            </li>
+            <li class="footer__list__item">
+              <a
+                href="#featured-house"
+                class="footer__link"
+                data-property-type="villa"
+                >Villa</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__column">
+          <h2 class="footer__title">Article</h2>
+          <ul class="footer__list">
+            <li class="footer__item">
+              <a href="#" class="footer__link">New Article</a>
+            </li>
+            <li class="footer__item">
+              <a href="#" class="footer__link">Popular Article</a>
+            </li>
+            <li class="footer__item">
+              <a href="#" class="footer__link">Most Read</a>
+            </li>
+            <li class="footer__item">
+              <a href="#" class="footer__link">Tips & Tricks</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__column">
+          <h2 class="footer__title">Contact</h2>
+          <address class="footer__contact">
+            <p class="footer__address">2464 Royal Ln. Mesa, New Jersey 45463</p>
+            <p class="footer__phone">
+              <a href="tel:+16715550110" class="footer__contact-link"
+                >(671) 555-0110</a
+              >
+            </p>
+            <p class="footer__email">
+              <a href="mailto:info@hounter.com" class="footer__contact-link"
+                >info@hounter.com</a
+              >
+            </p>
+          </address>
+        </div>
+      </section>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,367 @@
+@use "../base/variables" as vars;
+@use "../utils/breakpoints" as breakpoints;
+@use "sass:map";
+@use "../utils/mixins.scss" as *;
+
+.header {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: url("/img/green-blue-background-shape.svg") no-repeat right top /
+      100% auto;
+    z-index: map.get(vars.$zindex, before-bg);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: url("/img/header-background.png") no-repeat right top / 100%
+      auto;
+    border-radius: 0 0 0 50px;
+    z-index: map.get(vars.$zindex, after-bg);
+
+    @include breakpoints.respond(tab-land) {
+      top: 10rem;
+      right: vars.$horizontal-padding;
+      width: calc(100% - vars.$horizontal-padding * 2);
+      height: 52%;
+      background-size: cover;
+    }
+
+    @include breakpoints.respond(tab-port) {
+      height: 50%;
+    }
+
+    @include breakpoints.respond(phone) {
+      height: 45%;
+    }
+  }
+
+  &__top {
+    display: grid;
+    grid-template-columns: min-content max(40%, 52rem);
+    height: vars.$header-top-height;
+    align-items: center;
+    justify-content: space-between;
+
+    @include breakpoints.respond(tab-land) {
+      grid-template-columns: 1fr;
+      height: 100%;
+    }
+
+    @include responsive-padding(
+      big-desktop,
+      vars.$horizontal-padding,
+      vars.$horizontal-padding
+    );
+  }
+
+  &__logo {
+    display: grid;
+    grid-template-columns: 3.2rem 1fr;
+    grid-column-gap: 1.4rem;
+    position: relative;
+
+    &-shape {
+      background-color: vars.$color-logo-green;
+      height: 3.2rem;
+      width: 3.2rem;
+      border-radius: 4px 4px 24px 4px;
+      margin-top: -0.5rem;
+    }
+
+    &-shape::before {
+      content: "";
+      position: absolute;
+      background-color: vars.$color-secondary;
+      height: 3.2rem;
+      width: 3.2rem;
+      border-radius: 4px 4px 24px 4px;
+      top: -0.4rem;
+      left: -0.4rem;
+      margin-top: -0.5rem;
+      z-index: map.get(vars.$zindex, before-bg);
+    }
+
+    @include breakpoints.respond(tab-land) {
+      margin: 4rem 1rem;
+    }
+  }
+
+  &__navbar {
+    position: relative;
+
+    &-list {
+      position: absolute;
+      top: 1rem;
+      display: grid;
+      gap: 2.4rem;
+      grid-template-columns: repeat(4, 1fr);
+      width: 100%;
+      padding: 0 vars.$horizontal-padding;
+      left: 0;
+
+      @include breakpoints.respond(big-desktop) {
+        width: vars.$nav-bar-button-width-big;
+        padding: 0;
+        margin-top: -2rem;
+      }
+
+      @include breakpoints.respond(phone) {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 1rem;
+      }
+    }
+
+    @include breakpoints.respond(tab-land) {
+      padding: 0 vars.$horizontal-padding;
+    }
+
+    @include breakpoints.respond(phone) {
+      padding: 0 vars.$horizontal-padding;
+    }
+  }
+
+  button {
+    width: 100%;
+
+    @include breakpoints.respond(big-desktop) {
+      width: vars.$nav-bar-button-width-big;
+    }
+  }
+
+  @include breakpoints.respond(tab-land) {
+    &::before {
+      width: 70%;
+    }
+  }
+
+  @include breakpoints.respond(phone) {
+    height: 130rem;
+  }
+
+  @include responsive-padding(
+    tab-land,
+    vars.$horizontal-padding,
+    vars.$horizontal-padding
+  );
+}
+
+.header__hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  &-left {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr 1fr;
+    max-height: 42rem;
+    align-items: center;
+    margin-top: 5rem;
+
+    @include breakpoints.respond(tab-land) {
+      grid-column: 1/-1;
+      grid-row-start: 2;
+      max-width: 100%;
+    }
+
+    @include responsive-padding(
+      big-desktop,
+      calc(vars.$horizontal-padding / 2),
+      vars.$horizontal-padding
+    );
+  }
+
+  &-right {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    margin-top: 27rem;
+
+    @include breakpoints.respond(tab-land) {
+      grid-row-start: 1;
+      grid-column: 1 / -1;
+      margin-top: 31rem;
+    }
+  }
+
+  &--left-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 2.4rem;
+  }
+
+  &__search-bar {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 2fr auto;
+    grid-template-rows: 1fr;
+    padding: 2.4rem 0;
+    height: auto;
+
+    @include breakpoints.respond(tab-land) {
+      padding: 0 calc(vars.$horizontal-padding / 2);
+    }
+
+    @include breakpoints.respond(phone) {
+      padding: 2rem 0;
+    }
+
+    &__pin-icon {
+      grid-column: 1/2;
+      grid-row: 1;
+      position: absolute;
+      top: 13px;
+      left: 20px;
+    }
+
+    #search {
+      padding-left: 60px;
+      background-color: vars.$color-white;
+      grid-column: 1/-1;
+      grid-row: 1;
+
+      &:focus {
+        outline: none;
+        border: 2px vars.$color-primary solid;
+
+        &::placeholder {
+          color: transparent;
+        }
+      }
+
+      &::placeholder {
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 2.2rem;
+        color: vars.$color-grey-2;
+
+        @include breakpoints.respond(tab-land) {
+          margin-right: 50%;
+          text-overflow: ellipsis;
+        }
+      }
+
+      &:placeholder-shown {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+
+    input {
+      border: 1px vars.$color-grey-1 solid;
+      border-radius: 28px;
+      width: 100%;
+      height: 5rem;
+      color: vars.$color-grey-3;
+    }
+
+    .button--search {
+      margin: 4px;
+      width: 15rem;
+      height: 4.2rem;
+      background-image: url("/img/svgs/search-right-arrow.svg");
+      grid-column: 3;
+      grid-row: 1;
+      color: white;
+      background-repeat: no-repeat;
+      background-position: 90%;
+      background-size: auto;
+      color: vars.$color-white;
+      border: none;
+    }
+  }
+
+  &--main-paragraph {
+    @include breakpoints.respond(tab-land) {
+      text-align: center;
+    }
+  }
+}
+
+.header__partnership {
+  &-logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+
+    @include breakpoints.respond(phone) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+  }
+}
+
+.header__hero-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+  overflow-x: scroll;
+  padding: 0 calc(vars.$horizontal-padding/2);
+
+  .info-card {
+    background-color: vars.$color-white;
+    border-radius: 32px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 1.6rem;
+    padding: 2.4rem;
+
+    img {
+      height: 5.6rem;
+      width: 5.6rem;
+      @include circle-border-shadow;
+    }
+
+    &__images {
+      display: grid;
+      grid-template-columns: repeat(6, auto);
+      grid-template-rows: 1fr;
+
+      picture {
+        &:first-child {
+          grid-column: 1 / 3;
+          grid-row: 1;
+        }
+
+        &:nth-child(2) {
+          grid-column: 2 / 4;
+          grid-row: 1;
+        }
+
+        &:nth-child(3) {
+          grid-column: 3 / 5;
+          grid-row: 1;
+        }
+      }
+    }
+
+    &__text {
+      p {
+        white-space: nowrap;
+      }
+    }
+  }
+
+  @include breakpoints.respond(tab-land) {
+    margin-top: 2rem;
+  }
+}

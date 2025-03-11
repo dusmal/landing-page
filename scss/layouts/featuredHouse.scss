@@ -1,0 +1,137 @@
+@use "../base/variables" as vars;
+@use "../utils/breakpoints" as breakpoints;
+@use "../utils/mixins.scss" as *;
+@use "sass:map";
+
+.featured-header {
+  padding: 10rem vars.$horizontal-padding 0;
+
+  @include breakpoints.respond(phone) {
+    padding-top: 0;
+  }
+
+  &__tag {
+    position: relative;
+    padding-bottom: 1rem;
+    @include decorative-line();
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+
+    @include breakpoints.respond(tab-port) {
+      grid-template-columns: 1fr auto;
+      grid-template-rows: repeat(2, auto);
+      gap: 1rem;
+    }
+  }
+
+  &__property-filter {
+    justify-self: center;
+    grid-template-columns: repeat(3, auto);
+
+    @include breakpoints.respond(tab-port) {
+      grid-column: 1/-1;
+    }
+  }
+
+  &__slider-nav {
+    grid-template-columns: repeat(2, auto);
+
+    @include breakpoints.respond(tab-port) {
+      grid-column: 2/-1;
+      grid-row: 1;
+    }
+  }
+
+  &__property-filter,
+  &__slider-nav {
+    display: grid;
+    gap: 1rem;
+  }
+}
+
+.featured-house {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  padding-bottom: 12rem;
+
+  &__list {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 37.6rem;
+    overflow-x: scroll;
+    gap: 2.4rem;
+    width: 100%;
+    margin-top: 4rem;
+    padding: 0 vars.$horizontal-padding;
+  }
+
+  &__item {
+    &-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, auto);
+      gap: 2.4rem;
+    }
+
+    &-image {
+      position: relative;
+      width: 37.6rem;
+      height: 38.2rem;
+
+      img {
+        border-radius: 24px;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-status {
+      position: absolute;
+      z-index: map.get(vars.$zindex, tag-top);
+      left: 20px;
+      bottom: 20px;
+      padding: 0.8rem 1.6rem 0.8rem 3rem;
+      border-radius: 32px;
+      background-repeat: no-repeat;
+    }
+
+    .tag-popular {
+      background-image: url("/img/svgs/popular-icon.svg");
+      background-position: 10%;
+    }
+
+    .tag-best-deal {
+      background-image: url("/img/svgs/best-deals.svg");
+      background-position: 10% 45%;
+    }
+
+    .tag-new {
+      background-image: url("/img/svgs/house-icon.svg");
+      background-position: 10% 45%;
+    }
+
+    &-name {
+      padding-bottom: 0.8rem;
+    }
+  }
+
+  &__item-agent {
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    gap: 1.6rem;
+
+    img {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+    }
+  }
+}

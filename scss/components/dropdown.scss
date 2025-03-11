@@ -1,0 +1,50 @@
+@use "../base/variables" as vars;
+@use "../utils/breakpoints" as breakpoints;
+
+#property-button {
+  position: relative;
+}
+
+.dropdown__menu {
+  transition: all 0.5s ease-in-out;
+
+  &--property {
+    color: vars.$color-white;
+    text-align: center;
+    padding: 0.5rem 0 0 0;
+    border: 1px vars.$color-grey-1 solid;
+    background-color: vars.$color-sky-blue;
+    border-radius: 0 0 28px 28px;
+    border-top-color: transparent;
+    margin-top: -15px;
+  }
+}
+
+.dropdown {
+  &__item:first-child {
+    margin-top: 9px;
+  }
+
+  &__item {
+    &:hover {
+      cursor: pointer;
+      background-color: vars.$color-primary-light;
+      color: vars.$color-primary-dark;
+    }
+
+    &:first-child:hover {
+      border-radius: 20px 20px 0 0;
+    }
+
+    &:last-child:hover {
+      border-radius: 0 0 25px 25px;
+    }
+  }
+
+  &__link {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 4rem;
+  }
+}

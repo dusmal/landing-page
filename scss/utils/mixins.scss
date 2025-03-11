@@ -1,0 +1,32 @@
+@use "../base/variables" as vars;
+@use "../utils/breakpoints" as breakpoints;
+
+@mixin responsive-padding($breakpoint, $padding-value1, $padding-value2) {
+  @include breakpoints.respond($breakpoint) {
+    padding: 0 $padding-value1 0 $padding-value2;
+  }
+}
+
+@mixin decorative-line(
+  $width: 32px,
+  $height: 1px,
+  $color: vars.$color-secondary,
+  $left: -40px,
+  $top: 8px
+) {
+  &::before {
+    content: "";
+    position: absolute;
+    height: $height;
+    width: $width;
+    background-color: $color;
+    left: $left;
+    top: $top;
+  }
+}
+
+@mixin circle-border-shadow {
+  border-radius: 50%;
+  border: 3px vars.$color-white solid;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

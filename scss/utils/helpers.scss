@@ -1,0 +1,39 @@
+@use "../base/variables" as vars;
+
+.active {
+  display: block;
+}
+
+.inactive {
+  display: none;
+}
+
+.accent-color {
+  color: vars.$color-accent-green;
+}
+
+.tag-popular {
+  background-color: vars.$color-popular-red;
+  color: vars.$color-danger;
+}
+
+.tag-best-deal {
+  background-color: vars.$color-primary-light;
+  color: vars.$color-primary-dark;
+}
+
+.tag-new {
+  background-color: vars.$color-info-light;
+  color: vars.$color-info;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
